@@ -16,3 +16,12 @@ int Snake::y(void){
 void Snake::render(Canvas * canvas){
     canvas->draw_symbol(x(), y(), 'O');
 }
+
+void Snake::update(void) {
+    switch(direction) {
+        case Direction::LEFT: _x -= speed; break;
+        case Direction::RIGHT: _x += speed; break;
+        case Direction::UP: _y -= speed; break;
+        case Direction::DOWN: _y+= speed; break;
+    }
+}

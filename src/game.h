@@ -4,6 +4,7 @@
 #include "wall.h"
 #include "canvas.h"
 #include "snake.h"
+#include "controller.h"
 
 class Game {
 
@@ -15,6 +16,7 @@ class Game {
 
   private:
     void render(void);
+    void update(void);
 
   private:
     Snake snake;

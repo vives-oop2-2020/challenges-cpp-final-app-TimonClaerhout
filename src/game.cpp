@@ -31,3 +31,11 @@ void Game::render(void) {
 
   canvas.output_to_terminal();
 }
+
+void Game::update(void){
+    process_keyboard_input();
+    check_for_collisions_with_walls();
+
+    // Dynamic state changes !!
+    snake.update();
+}
