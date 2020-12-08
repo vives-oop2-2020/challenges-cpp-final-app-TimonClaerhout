@@ -1,9 +1,13 @@
 #pragma once
+#include "canvas.h"
 
 class Snake {
 
   public:
     Snake(int x, int y);
+
+  public:
+    void render(Canvas * canvas);
 
   public:
     int x(void);

@@ -27,6 +27,7 @@ void Game::render(void) {
     // canvas.draw_symbol(wall.x(), wall.y(), '#');
     wall.render(&canvas);
   }
+  snake.render(&canvas);
 
   canvas.output_to_terminal();
 }

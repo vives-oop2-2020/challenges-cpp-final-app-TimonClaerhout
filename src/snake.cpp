@@ -12,3 +12,7 @@ int Snake::x(void){
 int Snake::y(void){
     return _y;
 }
+
+void Snake::render(Canvas * canvas){
+    canvas->draw_symbol(x(), y(), 'O');
+}
