@@ -1,6 +1,6 @@
 #pragma once
 
-
+#include "entity.h"
 #include "canvas.h"
 
 // struct Location {
@@ -8,7 +8,7 @@
 //   int y;
 // }
 
-class PacMan {
+class PacMan : public Entity {
 
   private:
     enum class Direction {
