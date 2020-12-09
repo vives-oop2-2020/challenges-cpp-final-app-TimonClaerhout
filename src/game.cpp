@@ -1,16 +1,19 @@
 #include "game.h"
 #include <unistd.h> 
+#include <stdlib.h>
+#include <time.h> 
 
 Game::Game(void)
   : snake(25, 5) {
 
     create_walls();
     create_fruits();
+    //srand(time(NULL));
       int counter = 0;
   while (!gameOver) {
     counter++;
     render();
-    if (counter >= 5) {
+    if (counter >= 3) {
       update();
       counter = 0;
     }
@@ -69,8 +72,10 @@ void Game::process_keyboard_input(void) {
 void Game::update(void){
     process_keyboard_input();
     check_for_collisions_with_walls();
+    
     // Dynamic state changes !!
     snake.update();
+    check_for_collisions_with_fruits();
 }
 
 void Game::check_for_collisions_with_walls(void) {
@@ -82,5 +87,21 @@ void Game::check_for_collisions_with_walls(void) {
     if (x == wall.x() && y == wall.y()) {
       gameOver = true;
     }
+  }
+}
+
+void Game::check_for_collisions_with_fruits(void) {
+  int fruitToEat = -1;
+
+  for (int i = 0; i < fruits.size(); i++) {
+    if (snake.x() == fruits[i].x() &&
+      snake.y() == fruits[i].y()) {
+        fruitToEat = i;
+      }
+  }
+
+  if (fruitToEat >= 0) {
+    fruits.erase(fruits.begin() + fruitToEat);
+    fruits.push_back(Fruit(1+rand()%(WIDTH-2), 1+rand()%(HEIGHT-2)));
   }
 }
