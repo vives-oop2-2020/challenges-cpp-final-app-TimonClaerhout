@@ -55,6 +55,11 @@ void Game::render(void) {
     fruit.render(&canvas);
   }
 
+    for(auto tail : tails) {
+    // canvas.draw_symbol(wall.x(), wall.y(), '#');
+    tail.render(&canvas);
+  }
+
   canvas.output_to_terminal();
 }
 
@@ -76,6 +81,10 @@ void Game::update(void){
     // Dynamic state changes !!
     snake.update();
     check_for_collisions_with_fruits();
+    if(tails.size() >=1){
+      tails.erase(tails.begin());
+      tails.push_back(Tail(snake.x(),snake.y()));
+    }
 }
 
 void Game::check_for_collisions_with_walls(void) {
@@ -104,5 +113,6 @@ void Game::check_for_collisions_with_fruits(void) {
     fruits.erase(fruits.begin() + fruitToEat);
     fruits.push_back(Fruit(1+rand()%(WIDTH-2), 1+rand()%(HEIGHT-2)));
     canvas.modifyScore(10);
+    tails.push_back(Tail(snake.x(),snake.y()));
   }
 }

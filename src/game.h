@@ -6,7 +6,7 @@
 #include "snake.h"
 #include "controller.h"
 #include "canvas.h"
-
+#include "tail.h"
 class Game {
 
   public:
@@ -29,6 +29,7 @@ class Game {
     Snake snake;
     std::vector<Wall> walls;
     std::vector<Fruit> fruits;
+    std::vector<Tail> tails;
     Canvas canvas;
 
     const static int WIDTH = 30;
