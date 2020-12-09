@@ -5,6 +5,7 @@ Game::Game(void)
   : snake(25, 5) {
 
     create_walls();
+    create_fruits();
       int counter = 0;
   while (1) {
     counter++;
@@ -30,6 +31,10 @@ void Game::create_walls(void) {
   }
 }
 
+void Game::create_fruits(void) {
+  fruits.push_back(Fruit(3, 5));
+}
+
 void Game::render(void) {
   canvas.clear();
 
@@ -38,7 +43,14 @@ void Game::render(void) {
     // canvas.draw_symbol(wall.x(), wall.y(), '#');
     wall.render(&canvas);
   }
+
   snake.render(&canvas);
+
+  // WALLS
+  for(auto fruit : fruits) {
+    // canvas.draw_symbol(wall.x(), wall.y(), '#');
+    fruit.render(&canvas);
+  }
 
   canvas.output_to_terminal();
 }

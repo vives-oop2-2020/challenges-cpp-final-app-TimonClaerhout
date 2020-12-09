@@ -1,5 +1,4 @@
 #include "wall.h"
-#include "entity.h"
 
 Wall::Wall(int x, int y)
 : Entity(x,y) {
