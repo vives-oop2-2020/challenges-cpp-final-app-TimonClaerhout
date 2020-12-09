@@ -12,9 +12,12 @@ class Canvas {
   public:
     void output_to_terminal(void);
 
+  public:
+    void modifyScore(int scored);
+
   private:
     static const unsigned int WIDTH = 30;
     static const unsigned int HEIGHT = 10;
     char screen[WIDTH][HEIGHT];
-
+    int score = 0;
 };

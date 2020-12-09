@@ -103,5 +103,6 @@ void Game::check_for_collisions_with_fruits(void) {
   if (fruitToEat >= 0) {
     fruits.erase(fruits.begin() + fruitToEat);
     fruits.push_back(Fruit(1+rand()%(WIDTH-2), 1+rand()%(HEIGHT-2)));
+    canvas.modifyScore(10);
   }
 }

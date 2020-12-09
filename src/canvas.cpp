@@ -17,9 +17,13 @@ void Canvas::draw_symbol(int x, int y, char symbol) {
   screen[x][y] = symbol;
 }
 
+void Canvas::modifyScore(int scored){
+  score += scored;
+}
+
 void Canvas::output_to_terminal(void) {
   system("clear");
-  std::cout << "Snake field ..." << std::endl;
+  std::cout << "Score = " << score << std::endl;
   for (int y = 0; y < HEIGHT; y++) {
     for (int x = 0; x < WIDTH; x++) {
       std::cout << screen[x][y];
