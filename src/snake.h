@@ -1,19 +1,8 @@
 #pragma once
-
 #include "entity.h"
 #include "canvas.h"
 
-// struct Location {
-//   int x;
-//   int y;
-// }
-
-class PacMan : public Entity {
-
-  private:
-    enum class Direction {
-      UP, LEFT, RIGHT, DOWN
-    };
+class Snake : public Entity {
 
   public:
     Snake(int x, int y);
@@ -21,6 +10,7 @@ class PacMan : public Entity {
   public:
     void render(Canvas * canvas);
     void update(void);
+    void next_position(int * x, int * y);
 
   public:
     void stop(void);
@@ -30,9 +20,14 @@ class PacMan : public Entity {
     void right(void);
 
   private:
+    enum class Direction {
+      UP, LEFT, RIGHT, DOWN
+    };
+  private:
     void move(Direction direction);
 
   private:
     int speed = 1;
     Direction direction = Direction::LEFT;
+
 };

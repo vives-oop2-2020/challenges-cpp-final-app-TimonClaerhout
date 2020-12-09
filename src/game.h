@@ -19,6 +19,9 @@ class Game {
     void update(void);
 
   private:
+    void process_keyboard_input(void);
+
+  private:
     Snake snake;
     std::vector<Wall> walls;
 
