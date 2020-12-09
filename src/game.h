@@ -21,6 +21,7 @@ class Game {
     void update(void);
 
   private:
+    void check_for_collisions_with_walls(void);
     void process_keyboard_input(void);
 
   private:
@@ -32,4 +33,5 @@ class Game {
     const static int WIDTH = 30;
     const static int HEIGHT = 10;
 
+    bool gameOver = false;
 };

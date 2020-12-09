@@ -7,7 +7,7 @@ Game::Game(void)
     create_walls();
     create_fruits();
       int counter = 0;
-  while (1) {
+  while (!gameOver) {
     counter++;
     render();
     if (counter >= 5) {
@@ -68,7 +68,19 @@ void Game::process_keyboard_input(void) {
 
 void Game::update(void){
     process_keyboard_input();
-
+    check_for_collisions_with_walls();
     // Dynamic state changes !!
     snake.update();
+}
+
+void Game::check_for_collisions_with_walls(void) {
+  int x = 0;
+  int y = 0;
+  snake.next_position(&x, &y);
+
+  for(auto wall : walls) {
+    if (x == wall.x() && y == wall.y()) {
+      gameOver = true;
+    }
+  }
 }
