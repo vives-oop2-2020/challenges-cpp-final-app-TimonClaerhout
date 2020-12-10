@@ -29,11 +29,12 @@ class Game {
     Snake snake;
     std::vector<Wall> walls;
     std::vector<Fruit> fruits;
-    std::vector<Tail> tails;
+    std::vector<Snake> snakes;
     Canvas canvas;
 
     const static int WIDTH = 30;
     const static int HEIGHT = 10;
 
     bool gameOver = false;
+    int firstTail = 0;
 };
