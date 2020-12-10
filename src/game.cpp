@@ -21,9 +21,24 @@ void Game::game_loop(void) {
       update();
       counter = 0;
     }
-    usleep(100'000);  // 100ms
-
+    change_speed();
   }
+}
+
+void Game::change_speed(void){
+    if(canvas.giveScore() >= 40 && canvas.giveScore() < 80)
+    {
+      delay = 80'000; //80ms
+    }
+    else if (canvas.giveScore() >= 80 && canvas.giveScore() < 120)
+    {
+      delay = 60'000; //60ms
+    }
+    else if (canvas.giveScore() >= 120)
+    {
+      delay = 40'000; //40ms
+    }
+    usleep(delay);
 }
 
 void Game::create_walls(void) {
@@ -119,7 +134,7 @@ void Game::check_for_collisions_with_fruits(void) {
     fruits.push_back(Fruit(1+rand()%(WIDTH-2), 1+rand()%(HEIGHT-2)));
 
     canvas.modifyScore(10);
-    
+
     snakes.push_back(Snake(snake.x(),snake.y()));
   }
 }

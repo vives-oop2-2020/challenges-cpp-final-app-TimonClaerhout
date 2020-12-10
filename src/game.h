@@ -24,8 +24,11 @@ class Game {
     void check_for_collisions_with_walls(void);
     void check_for_collisions_with_fruits(void);
     void check_for_collisions_with_tail(void);
+
+  private:
     void process_keyboard_input(void);
     void game_loop(void);
+    void change_speed(void);
 
   private:
     Snake snake;
@@ -38,4 +41,6 @@ class Game {
     const static int HEIGHT = 10;
 
     bool gameOver = false;
+
+    int delay = 100'000;
 };

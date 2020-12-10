@@ -21,6 +21,10 @@ void Canvas::modifyScore(int scored){
   score += scored;
 }
 
+int Canvas::giveScore(void){
+  return score;
+}
+
 void Canvas::output_to_terminal(void) {
   system("clear");
   std::cout << "Score = " << score << std::endl;
