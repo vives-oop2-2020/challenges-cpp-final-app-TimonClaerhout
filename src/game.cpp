@@ -8,8 +8,12 @@ Game::Game(void)
 
     create_walls();
     create_fruits();
-    //srand(time(NULL));
-      int counter = 0;
+    srand(time(NULL));
+    game_loop();
+}
+
+void Game::game_loop(void) {
+  int counter = 0;
   while (!gameOver) {
     counter++;
     render();
@@ -21,7 +25,6 @@ Game::Game(void)
 
   }
 }
-
 
 void Game::create_walls(void) {
   // (0, 0) is top left
@@ -76,16 +79,18 @@ void Game::process_keyboard_input(void) {
 
 void Game::update(void){
     process_keyboard_input();
+
     check_for_collisions_with_walls();
-    
-    // Dynamic state changes !!
     check_for_collisions_with_tail(); 
+
     snake.update();
+
     check_for_collisions_with_fruits(); 
+
     if(snakes.size() >= 1){
       snakes.erase(snakes.begin());
     }
-      snakes.push_back(Snake(snake.x(),snake.y()));
+    snakes.push_back(Snake(snake.x(),snake.y()));
 }
 
 void Game::check_for_collisions_with_walls(void) {
@@ -112,13 +117,10 @@ void Game::check_for_collisions_with_fruits(void) {
   if (fruitToEat >= 0) {
     fruits.erase(fruits.begin() + fruitToEat);
     fruits.push_back(Fruit(1+rand()%(WIDTH-2), 1+rand()%(HEIGHT-2)));
+
     canvas.modifyScore(10);
-    //firstTail++;
+    
     snakes.push_back(Snake(snake.x(),snake.y()));
-    //if(firstTail == 1)
-    //{
-      //snakes.push_back(Snake(snake.x(),snake.y()));
-    //}
   }
 }
 

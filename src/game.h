@@ -25,6 +25,7 @@ class Game {
     void check_for_collisions_with_fruits(void);
     void check_for_collisions_with_tail(void);
     void process_keyboard_input(void);
+    void game_loop(void);
 
   private:
     Snake snake;
@@ -37,5 +38,4 @@ class Game {
     const static int HEIGHT = 10;
 
     bool gameOver = false;
-    int firstTail = 0;
 };
