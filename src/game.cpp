@@ -81,10 +81,11 @@ void Game::update(void){
     // Dynamic state changes !!
     snake.update();
     check_for_collisions_with_fruits();
+    check_for_collisions_with_tail();  
     if(snakes.size() >= 1){
       snakes.erase(snakes.begin());
-      snakes.push_back(Snake(snake.x(),snake.y()));
     }
+      snakes.push_back(Snake(snake.x(),snake.y()));
 }
 
 void Game::check_for_collisions_with_walls(void) {
@@ -112,11 +113,23 @@ void Game::check_for_collisions_with_fruits(void) {
     fruits.erase(fruits.begin() + fruitToEat);
     fruits.push_back(Fruit(1+rand()%(WIDTH-2), 1+rand()%(HEIGHT-2)));
     canvas.modifyScore(10);
-    firstTail++;
-    if(firstTail == 1)
-    {
-      snakes.push_back(Snake(snake.x(),snake.y()));
-    }
+    //firstTail++;
     snakes.push_back(Snake(snake.x(),snake.y()));
+    //if(firstTail == 1)
+    //{
+      //snakes.push_back(Snake(snake.x(),snake.y()));
+    //}
+  }
+}
+
+void Game::check_for_collisions_with_tail(void) {
+  int x = 0;
+  int y = 0;
+  snake.next_position(&x, &y);
+  for (int i = 0; i < snakes.size(); i++) {
+    if (x == snakes[i].x() &&
+      y == snakes[i].y()) {
+        gameOver = true;
+      }
   }
 }
