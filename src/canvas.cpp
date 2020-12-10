@@ -25,6 +25,10 @@ int Canvas::giveScore(void){
   return score;
 }
 
+void Canvas::modifyHighscore(int highscore1){
+  highscore = highscore1;
+}
+
 void Canvas::output_to_terminal(void) {
   system("clear");
   std::cout << "Score = " << score << std::endl;
@@ -35,4 +39,5 @@ void Canvas::output_to_terminal(void) {
     std::cout << std::endl;
   }
   std::cout << std::endl;
+  std::cout << "Highscore = " << highscore << std::endl;
 }

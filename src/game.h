@@ -6,6 +6,7 @@
 #include "snake.h"
 #include "controller.h"
 #include "canvas.h"
+#include "scoreboard.h"
 
 class Game {
 
@@ -36,6 +37,7 @@ class Game {
     std::vector<Fruit> fruits;
     std::vector<Snake> snakes;
     Canvas canvas;
+    Scoreboard scoreboard;
 
     const static int WIDTH = 30;
     const static int HEIGHT = 10;

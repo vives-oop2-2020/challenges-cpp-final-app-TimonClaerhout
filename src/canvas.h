@@ -15,10 +15,12 @@ class Canvas {
   public:
     void modifyScore(int scored);
     int giveScore(void);
+    void modifyHighscore(int highscore1);
 
   private:
     static const unsigned int WIDTH = 30;
     static const unsigned int HEIGHT = 10;
     char screen[WIDTH][HEIGHT];
     int score = 0;
+    int highscore;
 };

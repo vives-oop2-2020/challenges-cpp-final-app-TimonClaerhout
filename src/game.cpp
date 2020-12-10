@@ -23,6 +23,8 @@ void Game::game_loop(void) {
     }
     change_speed();
   }
+  scoreboard.save_score(canvas.giveScore());
+  canvas.modifyHighscore(scoreboard.giveHighscore());
 }
 
 void Game::change_speed(void){
@@ -69,12 +71,12 @@ void Game::render(void) {
 
   // WALLS
   for(auto fruit : fruits) {
-    // canvas.draw_symbol(wall.x(), wall.y(), '#');
+    // canvas.draw_symbol(wall.x(), wall.y(), 'X');
     fruit.render(&canvas);
   }
 
     for(auto snake : snakes) {
-    // canvas.draw_symbol(wall.x(), wall.y(), '#');
+    // canvas.draw_symbol(wall.x(), wall.y(), 'O');
     snake.render(&canvas);
   }
 
