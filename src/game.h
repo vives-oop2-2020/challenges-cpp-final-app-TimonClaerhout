@@ -6,7 +6,7 @@
 #include "snake.h"
 #include "controller.h"
 #include "canvas.h"
-#include "tail.h"
+
 class Game {
 
   public:
