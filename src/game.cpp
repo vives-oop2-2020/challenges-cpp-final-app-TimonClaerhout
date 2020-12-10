@@ -79,9 +79,9 @@ void Game::update(void){
     check_for_collisions_with_walls();
     
     // Dynamic state changes !!
+    check_for_collisions_with_tail(); 
     snake.update();
-    check_for_collisions_with_fruits();
-    check_for_collisions_with_tail();  
+    check_for_collisions_with_fruits(); 
     if(snakes.size() >= 1){
       snakes.erase(snakes.begin());
     }
