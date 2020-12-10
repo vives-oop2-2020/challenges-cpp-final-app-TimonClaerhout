@@ -5,9 +5,10 @@
 
 void Scoreboard::save_score(int score){
     // Create and open a text file
-    std::ofstream MyFile("scoreboard.txt");
+    std::ofstream MyFile("scoreboard.txt",std::ios::app);
   // Write to the file
-  MyFile << score;
+  MyFile << score << "\n";
+  MyFile.close();
 }
 
 int Scoreboard::giveHighscore(void){
