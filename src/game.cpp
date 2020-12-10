@@ -5,7 +5,7 @@
 
 Game::Game(void)
   : snake(25, 5) {
-
+    canvas.modifyHighscore(scoreboard.giveHighscore());
     create_walls();
     create_fruits();
     srand(time(NULL));
@@ -25,6 +25,7 @@ void Game::game_loop(void) {
   }
   scoreboard.save_score(canvas.giveScore());
   canvas.modifyHighscore(scoreboard.giveHighscore());
+  canvas.output_to_terminal();
 }
 
 void Game::change_speed(void){
