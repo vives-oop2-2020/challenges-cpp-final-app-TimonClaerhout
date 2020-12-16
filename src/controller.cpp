@@ -32,7 +32,7 @@ void set_conio_terminal_mode()
 
     /* register cleanup handler, and set the new terminal mode */
     atexit(reset_terminal_mode);
-    orig_termios.c_lflag &= ~ECHO;    // HACK FOR ECHO !
+    // orig_termios.c_lflag &= ~ECHO;    // HACK FOR ECHO !
     // new_termios.c_lflag &= ~ICANON;
     // new_termios.c_lflag &= ~ECHO; /* turn off ECHO */
     cfmakeraw(&new_termios);    // Act as old Version 7 terminal driver (no echo, char per char)
