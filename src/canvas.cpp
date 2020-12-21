@@ -29,6 +29,11 @@ void Canvas::modifyHighscore(int highscore1){
   highscore = highscore1;
 }
 
+void Canvas::modify_wall_setting(int width, int height){
+  WIDTH = width;
+  HEIGHT = height;
+}
+
 void Canvas::output_to_terminal(void) {
   system("clear");
   std::cout << "Score = " << score << std::endl;

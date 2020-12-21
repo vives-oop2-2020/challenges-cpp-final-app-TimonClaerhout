@@ -187,4 +187,5 @@ void Game::modify_wall_settings(void){
     }
     i++;
   }
+  canvas.modify_wall_setting(WIDTH, HEIGHT);
 }

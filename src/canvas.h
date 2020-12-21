@@ -16,6 +16,7 @@ class Canvas {
     void modifyScore(int scored);
     int giveScore(void);
     void modifyHighscore(int highscore1);
+    void modify_wall_setting(int width, int height);
 
   private:
     static const unsigned int WIDTH = 30;
