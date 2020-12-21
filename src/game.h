@@ -32,6 +32,10 @@ class Game {
     void change_speed(void);
 
   private:
+    void wall_editor(int width, int height);
+    void modify_wall_settings(void);
+
+  private:
     Snake snake;
     std::vector<Wall> walls;
     std::vector<Fruit> fruits;
@@ -39,8 +43,8 @@ class Game {
     Canvas canvas;
     Scoreboard scoreboard;
 
-    const static int WIDTH = 30;
-    const static int HEIGHT = 10;
+    int WIDTH = 30;
+    int HEIGHT = 10;
 
     bool gameOver = false;
 

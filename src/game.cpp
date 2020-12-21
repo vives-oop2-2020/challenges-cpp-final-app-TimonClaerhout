@@ -2,10 +2,13 @@
 #include <unistd.h> 
 #include <stdlib.h>
 #include <time.h> 
+#include "fstream"
 
 Game::Game(void)
   : snake(25, 5) {
     canvas.modifyHighscore(scoreboard.giveHighscore());
+    wall_editor(30,10);
+    modify_wall_settings();
     create_walls();
     create_fruits();
     srand(time(NULL));
@@ -151,5 +154,27 @@ void Game::check_for_collisions_with_tail(void) {
       y == snakes[i].y()) {
         gameOver = true;
       }
+  }
+}
+
+void Game::wall_editor(int width, int height){
+    // Read from the text file
+    std::ofstream Wallfile("walledit.txt");
+    Wallfile << width << "\n" << height;
+    Wallfile.close();
+}
+
+void Game::modify_wall_settings(void){
+  int i = 0;
+  int number = 0;
+  std::ifstream Wallfile1("walledit.txt");
+  while (Wallfile1 >> number) {
+    if(i!=1){
+      WIDTH = number;
+    }
+    else{
+      HEIGHT = number;
+    }
+    i++;
   }
 }
