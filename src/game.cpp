@@ -7,7 +7,7 @@
 Game::Game(void)
   : snake(25, 5) {
     canvas.modifyHighscore(scoreboard.giveHighscore());
-    wall_editor(30,10);
+    wall_editor(1,1);
     modify_wall_settings();
     create_walls();
     create_fruits();
@@ -170,10 +170,20 @@ void Game::modify_wall_settings(void){
   std::ifstream Wallfile1("walledit.txt");
   while (Wallfile1 >> number) {
     if(i!=1){
-      WIDTH = number;
+      if(number < 25){
+        WIDTH = 30;
+      }
+      else{
+        WIDTH = number;
+      }
     }
     else{
-      HEIGHT = number;
+      if(number < 5){
+        HEIGHT = 10;
+      }
+      else{
+        HEIGHT = number;
+      }
     }
     i++;
   }
