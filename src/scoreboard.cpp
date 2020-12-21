@@ -14,8 +14,8 @@ int Scoreboard::giveHighscore(void){
     int highnumber = 0;
     // Read from the text file
     std::ifstream MyReadFile("scoreboard.txt");
-    while (getline (MyReadFile, )) {
-        if(MyReadFile >> number){
+    while (MyReadFile >> number) {
+        if(number > highnumber){
             highnumber = number;
         }
     }
