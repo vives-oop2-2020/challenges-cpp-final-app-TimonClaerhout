@@ -29,9 +29,10 @@ void Canvas::modifyHighscore(int highscore1){
   highscore = highscore1;
 }
 
-void Canvas::modify_wall_setting(int width, int height){
-  WIDTH = width;
-  HEIGHT = height;
+void Canvas::intro(void){
+  std::cout << "Welcome to the snake game!!" << std::endl;
+  std::cout << "You can decide how big the field has to be, type the measurements and press enter to confirm" << std::endl;
+  std::cout << "Good Luck!" << std::endl;
 }
 
 void Canvas::output_to_terminal(void) {

@@ -32,10 +32,6 @@ class Game {
     void change_speed(void);
 
   private:
-    void wall_editor(int width, int height);
-    void modify_wall_settings(void);
-
-  private:
     Snake snake;
     std::vector<Wall> walls;
     std::vector<Fruit> fruits;
