@@ -32,6 +32,42 @@ Open your terminal (e.g. Powershell) and type this command:
 git clone git@github.com:vives-oop2-2020/challenges-cpp-final-app-TimonClaerhout.git
 ```
 
-Then open the project with Visual Studio Code and follow the steps of this short video: 
+Then open the project with Visual Studio Code and open a new terminal.
+Type in the terminal this command:
+
+```bash
+make
+```
+
+If project is build type:
+
+```bash
+cd bin/
+```
+
+```bash
+./snake
+```
+
+Or you can also follow the steps of this instruction video: 
 
 ![Demo of snake game](./img/snake-game.gif)
+
+## How to change map symbols?
+
+Go to the src directory and open the symbol.json file, you will see this window:
+
+![Window of symbol.json file](./img/mapeditor_window.png)
+
+You can change the symbols that is displayed on the map but dont forget to rebuild your project again.
+
+Follow the steps of "How to run Snake Game?" again but pay attention that you aren't in the bin directory anymore.
+If that's the case, enter this command:
+
+```bash
+cd ..
+```
+
+Or you can follow the steps of this instruction video to change the map symbols:
+
+![Demo of map settings](./img/map-settings.gif)
