@@ -28,6 +28,21 @@ void Game::game_loop(void) {
   scoreboard.save_score(canvas.giveScore());
   canvas.modifyHighscore(scoreboard.giveHighscore());
   canvas.output_to_terminal();
+  go_to_menu();
+}
+
+void Game::go_to_menu(void){
+  if(canvas.giveScore() > scoreboard.giveHighscore())
+  {
+    std::cout << "Congrats on beating the highscore, you're a god!!" << std::endl;
+    usleep(1'000'000);
+    std::cout << "Moving to menu ..." << std::endl;    
+  } else {
+    std::cout<<"Thanks for playing!" <<std::endl;
+  }
+
+  usleep(2'000'000);
+  Menu menu;
 }
 
 void Game::change_speed(void){

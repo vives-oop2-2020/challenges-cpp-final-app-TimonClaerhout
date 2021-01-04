@@ -7,6 +7,8 @@
 #include "controller.h"
 #include "canvas.h"
 #include "scoreboard.h"
+#include "menu.h"
+#include <iostream>
 
 class Game {
 
@@ -30,6 +32,7 @@ class Game {
     void process_keyboard_input(void);
     void game_loop(void);
     void change_speed(void);
+    void go_to_menu(void);
 
   private:
     Snake snake;

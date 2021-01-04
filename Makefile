@@ -18,8 +18,8 @@ EXECUTABLE=snake
 all: $(EXECUTABLE)
 
 # The executable depends on all the separate object files
-$(EXECUTABLE): main.o controller.o canvas.o snake.o wall.o fruit.o entity.o game.o scoreboard.o
-	$(CC) main.o controller.o canvas.o snake.o wall.o fruit.o entity.o game.o scoreboard.o -o $(EXECUTABLE)
+$(EXECUTABLE): main.o controller.o canvas.o snake.o wall.o fruit.o entity.o game.o scoreboard.o menu.o
+	$(CC) main.o controller.o canvas.o snake.o wall.o fruit.o entity.o game.o scoreboard.o menu.o -o $(EXECUTABLE)
 
 main.o: main.cpp
 	$(CC) $(CFLAGS) main.cpp
@@ -44,6 +44,9 @@ entity.o: src/entity.cpp
 
 scoreboard.o: src/scoreboard.cpp
 	$(CC) $(CFLAGS) src/scoreboard.cpp
+
+menu.o: src/menu.cpp
+	$(CC) $(CFLAGS) src/menu.cpp
 
 game.o: src/game.cpp
 	$(CC) $(CFLAGS) src/game.cpp

@@ -1,8 +1,8 @@
 #include <iostream>
-#include "src/game.h"
+#include "src/menu.h"
 
 int main() {
 
-  Game game;
+  Menu menu;
   return 0;
 }
