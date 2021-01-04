@@ -15,10 +15,9 @@ void Wall::render(Canvas * canvas) {
   //      {"wall", "&"}
   //  
   //  };
-  //  auto v6 =  j["wall"].get<std::string>();
+  //  auto symbolfile =  j["wall"].get<std::string>();
   std::ifstream ifs("symbol.json");
   json jf = json::parse(ifs);
-  //fs >> j;
-  std::string v6 =  jf["wall"];
-  char symbol = v6[0];
+  auto symbolfile =  jf["wall"].get<std::string>();
+  char symbol = symbolfile[0];
   canvas->draw_symbol(x(), y(), symbol);};

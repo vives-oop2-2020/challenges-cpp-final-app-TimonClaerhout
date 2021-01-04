@@ -19,7 +19,10 @@ all: $(EXECUTABLE)
 
 # The executable depends on all the separate object files
 $(EXECUTABLE): main.o controller.o canvas.o snake.o wall.o fruit.o entity.o game.o scoreboard.o menu.o
-	$(CC) main.o controller.o canvas.o snake.o wall.o fruit.o entity.o game.o scoreboard.o menu.o -o $(EXECUTABLE)
+	# mkdir bin
+	$(CC) main.o controller.o canvas.o snake.o wall.o fruit.o entity.o game.o scoreboard.o menu.o -o bin/$(EXECUTABLE)
+	cp src/symbol.json bin/
+	cp scoreboard.txt bin/
 
 main.o: main.cpp
 	$(CC) $(CFLAGS) main.cpp
