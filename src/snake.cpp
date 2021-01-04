@@ -1,11 +1,19 @@
 #include "snake.h"
+#include "json.hpp"
+#include <fstream>
 
+using namespace nlohmann;
+  
 Snake::Snake(int x, int y)
   : Entity(x, y){
 }
 
 void Snake::render(Canvas * canvas){
-    canvas->draw_symbol(x(), y(), 'O');
+  std::ifstream ifs("symbol.json");
+  json jf = json::parse(ifs);
+  auto symbolfile =  jf["snake"].get<std::string>();
+  char symbol = symbolfile[0];
+  canvas->draw_symbol(x(), y(), symbol);
 }
 
 void Snake::update(void) {

@@ -1,5 +1,5 @@
 {
     "wall": "#",
     "snake": "O",
-    "fruit": "X"
+    "fruit": "x"
 }
