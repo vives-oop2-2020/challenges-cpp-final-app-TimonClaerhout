@@ -23,6 +23,17 @@ Extra could be a map editor to create maps.
 - A makefile so the user only needs to use `make` to build your app.
 - Check if your application runs on other systems (Windows vs Linux). If not, no problem, but make sure to document this inside your README.
 
+## Intro Snake Game
+
+Welcome to Snake Game!!
+
+This game is easy to install and fun to play but also unique: you can decide how the map looks like, there are leaderboards, 
+the snake that can go faster and so much more!
+Follow the steps below or watch the instruction video's in order to install the game.
+The instructions of how to play the game can be found in the game itself.
+
+Have fun!!
+
 ## How to run Snake Game?
 
 First you need to clone the repository from github to your Linux pc (Windows is not compatible to play the game).
