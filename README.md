@@ -34,4 +34,4 @@ git clone git@github.com:vives-oop2-2020/challenges-cpp-final-app-TimonClaerhout
 
 Then open the project with Visual Studio Code and follow the steps of this short video: 
 
-![Demo of snake game](./snake_game.mp4)
+![Demo of snake game](./img/snake_game.mp4)
