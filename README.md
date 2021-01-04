@@ -22,3 +22,16 @@ Extra could be a map editor to create maps.
 - Provide a decent README explaining your project, how it is structured, what fancy techniques you used, how someone can build your app and how to run it. Also add a couple of screenshots in your README off how your app looks.
 - A makefile so the user only needs to use `make` to build your app.
 - Check if your application runs on other systems (Windows vs Linux). If not, no problem, but make sure to document this inside your README.
+
+## How to run Snake Game?
+
+First you need to clone the repository from github to your Linux pc (Windows is not compatible to play the game).
+Open your terminal (e.g. Powershell) and type this command:
+
+```bash
+git clone git@github.com:vives-oop2-2020/challenges-cpp-final-app-TimonClaerhout.git
+```
+
+Then open the project with Visual Studio Code and follow the steps of this short video: 
+
+![Demo of game](./img/demo_game.gif)
