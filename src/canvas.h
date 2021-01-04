@@ -16,7 +16,6 @@ class Canvas {
     void modifyScore(int scored);
     int giveScore(void);
     void modifyHighscore(int highscore1);
-    void intro(void);
 
   private:
     static const unsigned int WIDTH = 30;

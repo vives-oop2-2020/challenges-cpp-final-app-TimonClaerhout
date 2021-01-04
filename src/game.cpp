@@ -6,7 +6,6 @@
 
 Game::Game(void)
   : snake(25, 5) {
-    canvas.intro();
     canvas.modifyHighscore(scoreboard.giveHighscore());
     create_walls();
     create_fruits();
