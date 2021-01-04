@@ -9,6 +9,8 @@ Game::Game(void)
     canvas.modifyHighscore(scoreboard.giveHighscore());
     create_walls();
     create_fruits();
+    snakes.push_back(Snake(snake.x()+1,snake.y()));
+    snakes.push_back(Snake(snake.x()+2,snake.y()));
     srand(time(NULL));
     game_loop();
 }
@@ -121,7 +123,7 @@ void Game::update(void){
 
     check_for_collisions_with_fruits(); 
 
-    if(snakes.size() >= 1){
+    if(snakes.size() >= 3){
       snakes.erase(snakes.begin());
     }
     snakes.push_back(Snake(snake.x(),snake.y()));
